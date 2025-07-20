@@ -93,6 +93,9 @@ main {
   /* Make main element take up any surplus space to push footer down */
   flex: 1 0 auto;
   margin-top: 47px;
+  /* Enable flex properties for child elements */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Hero section */
@@ -190,6 +193,57 @@ main {
   color: #ffffff;
 }
 
+/* Gallery page */
+#photos img {
+  width: 100%;
+  line-height: 1em;
+}
+#photos {
+  line-height: 0;
+
+}
+
+ /* signup form */
+ #signup {
+  background-size: cover;
+  background-position: 75%;
+  flex-grow: 1;
+  background-image: url("../images/signup-image.webp");
+  padding-top: 20px 10% 0 10%;
+ }
+ #signup-form {
+  color: #ffffff;
+  background-color: rgba(60, 60, 60, .6);
+  padding: 30px;
+ }
+ #signup-form>h2{
+  color: #fafafa;
+  margin-bottom: 20px;
+ }
+ .text-input {
+  background: transparent;
+  color: #fafafa;
+  border: 1px solid #fafafa;
+  width: 100%;
+  height: 25px;
+  margin: 5px 0 20px 0;
+  border-radius: 2px;
+  padding: 0 5px;
+ }
+ .radio-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+ }
+
+ .join-button{
+  margin-top: 20px;
+  border-radius: 2px;
+  padding: 15px 32px;
+  font-size: 100%;
+  background-color: #454b1b;
+  color: #fafafa
+ }
 /* Footer */
 #social-networks {
   text-align: center;
@@ -205,6 +259,14 @@ main {
   color: #3a3a3a;
 }
 
+/* Media query: large and landscape phones (570px and up) */
+
+@media screen and (min-width: 570px) {
+#photos {
+  column-count: 2;
+  column-gap: 0;
+}
+}
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
 
@@ -264,6 +326,29 @@ main {
     text-align: end;
     align-self: flex-end;
   }
+  
+  #photos {
+    column-count: 3;
+    column-gap: 0;
+  }
+  #signup {
+    background-position: center;
+    position: relative;
+  }
+  
+  #signup-form {
+    max-width: 400px;
+    position: absolute;
+    left: 10%;
+    top: 150px;
+  }
+  .text-input:hover {
+    border-color: #f16c6b;
+  }
+  .join-button:hover {
+    background-color: #fafafa;
+    color: #454b1b;
+  }
 }
 
 /* Large devices (laptops and desktops, 992px and up) */
@@ -298,5 +383,10 @@ main {
 
   #benefits-physical>div {
     align-self: flex-end
+  }
+
+   #photos {
+    column-count: 4;
+    column-gap: 0;
   }
 }
